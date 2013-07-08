@@ -38,11 +38,11 @@ public class customServlet extends HttpServlet
         {
             //    List<String> requestParameterNames = Collections.list((Enumeration<String>) request.getParameterNames());
 
-                List<String> requestParameterNames = Collections.list(request.getParameterNames());
+            List<String> requestParameterNames = Collections.list(request.getParameterNames());
 
             for ( String parameterName:requestParameterNames)
                 {
-                        dump.append(parameterName+":"+request.getParameter(parameterName));
+                        dump.append(parameterName+":"+request.getParameter(parameterName)+" ");
                 }
         }
 
@@ -52,11 +52,14 @@ public class customServlet extends HttpServlet
         }
 
         PrintWriter out = response.getWriter();
-        out.println("<html>");
-        out.println("<body>");
-        out.println("<h1>HTTP Servlet GET!==> You Sent "+ dump +"</h1>");
-        out.println("</body>");
-        out.println("</html>");
+        out.println("Received by the Server=>"+dump);
+
+//        PrintWriter out = response.getWriter();
+//        out.println("<html>");
+//        out.println("<body>");
+//        out.println("<h1>HTTP Servlet GET!==> You Sent "+ dump +"</h1>");
+//        out.println("</body>");
+//        out.println("</html>");
     }
 
 
